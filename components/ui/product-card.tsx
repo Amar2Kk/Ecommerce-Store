@@ -16,9 +16,14 @@ interface ProductCard {
 }
 
 const ProductCard: React.FC<ProductCard> = ({ data }) => {
+    const router = useRouter();
+    const handleClick = () => {
+        router.push(`/product/${data?.id}`);
+    };
+
     return (
         <div
-            onClick={() => {}}
+            onClick={handleClick}
             className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
         >
             {/* Image & actions */}
